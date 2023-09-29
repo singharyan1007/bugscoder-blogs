@@ -1,23 +1,5 @@
-# Nextra Docs Template 
+# Bugscoder Base
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+Hi, my name is Aryan Singh. And this is my base of knowledge. I have been working on this for a while now. I have been learning a lot of things and I wanted to document them somewhere. So I decided to make this repository. I will be adding more and more things to this repository as I learn them. I will also be adding some of my projects
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
-
-## Quick Start
-
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
-
-## Local Development
-
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
