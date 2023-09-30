@@ -1,0 +1,31 @@
+# Hoisting
+
+
+Hoisting means, moving all the variable, function and class declarations to the top of their block scope. 
+>>Only the declarations, not the initialisations.
+
+This happens because of the Execution context.
+```typescript
+var a;
+console.log(a)
+console.log(getNums)
+
+function getNums(num){
+    console.log(num*num);
+  }
+a=10;
+getNums(20);
+```
+```typescript
+Output
+
+undefined
+//then the whole function block is printed
+//now the function result is printed
+```
+
+This happens because in execution context all the declared variables are initially assigned as `undefined`. And the whole function is put in the memory component.
+
+
+
+

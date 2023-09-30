@@ -1,3 +1,5 @@
 {
-    "howitworks":"How it works"
+  "howitworks": "How it works",
+  "hoisting": "Hoisting",
+  "howfunctionswork": "How Functions Work and Call Stack"
 }

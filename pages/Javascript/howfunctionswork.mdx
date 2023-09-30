@@ -1,0 +1,31 @@
+# How functions work in Javascript and Call Stack
+
+```typescript
+
+var x=1;
+a();
+b();
+console.log(x)
+
+function a(){
+  var x=10;
+  console.log(x);
+
+  }
+function b(){
+    var x=100;
+    console.log(x)
+  }
+  ```
+ *Output*
+ ```typescript
+ 10
+ 100
+ 1
+ ```
+
+ The reason for this lies in the Execution Context and Hoisting.
+
+ First the variable `x`  is assigned value `undefined`. Then both the functions are put in the Memory component. Now, the Global Execution context is put in the Call Stack. Now `function a()` is executed. The Local Execution Context is created in the code region during execution phase. The local variable `x` is assigned to undefined. During the code execution, the `console.log(x)` prints `10` because it is available in the local memory region. After completion of the function, it is removed from the call stack. 
+
+ >So `console.log(x)` print the value of x ,available locally in the memory component. 

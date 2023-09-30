@@ -25,6 +25,7 @@ const config: DocsThemeConfig = {
   },
   head:(
     <>
+    <title>Bugscoder</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="Bugscoder" />
       <meta property="og:description" content="Base" /> 

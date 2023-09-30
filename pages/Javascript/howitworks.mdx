@@ -1,10 +1,46 @@
 # What is Javascript and how Javascript works behind the scenes ?
 
 Javascript is a high level, object oriented programming language, which is used to make web pages interactive.
-It is a synchronous, single threaded language, which means it can execute one line of code at a time in a sequence.
+>>It is a synchronous, single threaded language, which means it can execute one line of code at a time in a sequence.
 
-It functions using something called as Execution stack and Event loop.
+It functions using something called as **Execution Context** and Event loop.
 
 ## Execution context
 
 When a Javascript engine runs a script, it creates an execution context. This execution context is a wrapper to help manage the code that is running. It has two parts. Memory envirenment and code execution.
+Execution Context has two parts, namely **Memory Component** also known as  *Variable Environment*, which stores data in *key-value* format. Second part is the **Code Component** also known as the *Thread of Execution*, which runs the code line by line.
+![Execution Context](https://www.freecodecamp.org/news/content/images/2022/12/1.png)
+
+## How the code is executed in the Execution Context?
+
+```typescript
+
+var n = 5;
+
+function square(n) {
+  var ans = n * n;
+  return ans;
+}
+
+var square1 = square(n);
+var square2 = square(8);
+
+console.log(square1)
+console.log(square2)
+
+
+```
+Initially a global execution context is created. Then Two parts are made - Memory Component and the Code Component. The variables are placed in the memory component and assigned the value  `undefined` initially. If there is a function then the whole function is copied in the memory component. For example, n,square1,square2 are all assigned value `undefined` in the first phase.
+
+If an arrow function is defined like `var name=()=>console.log("Shinigami")`, it is treated like a variable, and assigned `undefined`.
+
+In the second phase, when the function is invoked, a separate execution context is again created in the code region for that particular function. It will have both the parts.
+![Internal Execution context](https://www.freecodecamp.org/news/content/images/2022/12/untitled-3-1.png)
+
+Finally, when the code is executed then, the values of `ans` is assigned with the returned/calculated value.
+![Final](https://www.freecodecamp.org/news/content/images/2022/12/untitled-4.png)
+
+## How the Call Stack works?
+
+First pushes the Global Context in the stack. Also called as Execution Context Stack, Runtime Stack, Machine Stack. Now for every function call, a local execution context is created ans pushed in the stack. Perform like a basuc call stack in JAVA.
+
