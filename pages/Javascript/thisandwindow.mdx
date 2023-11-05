@@ -1,0 +1,56 @@
+#  this keyword
+
+> Whenever a javscript function is run, a global execution context, a window object and a this keyword is created.
+
+`this` keyword refers the current object that is executing the code. this  keyword stores the current execution context. 
+
+## Various ways in which the `this` keyword id used
+
+1. implicit binding
+- When a function is called as a method of the object, this keyword refers to the object itself.
+```typescript
+const person = {
+     name: "ram",
+    age: 22,
+    greet: function(){
+        return `Hello ${this.name}, you are ${this.age} years old`
+    }
+}
+console.log(person.greet());
+```
+2. explicit binding
+- When a function is called using call, apply or bind method, this keyword refers to the object passed as the first argument of the call, apply or bind method.
+```typescript
+function ageVerify(){
+    if(this.age> 18){
+        console.log("Yes you can drive");
+    } else {
+        console.log("No you cannot drive");
+    }
+}
+  
+const per1 = {age: 21};
+const per2 = {age: 16};
+ageVerify.call(per1); //this refers to per1
+ageVerify.call(per2); //this refers to per2
+```
+3. Default binding
+- By default, this keyword refers to the `window` object.
+
+4. Arrow function binding
+- Without the function keyword this is unable to refer to the object in the outer scope. 
+- Arrow functions do not have their own this keyword. They use the this keyword of the function they are written in.
+```typescript   
+const person = {
+    name: "ram",
+    age: 22,
+    greet: function(){
+        const innerFunc = () => {
+            console.log(this.name);
+        }
+        innerFunc();
+    }
+}   
+console.log(person.greet());
+```
+

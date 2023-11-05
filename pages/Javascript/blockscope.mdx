@@ -1,0 +1,21 @@
+# Block Scope and Shadowing in JavaScript
+
+## What is a block?
+
+Also called as compound statements. `{ }` is a valid block. **A block is a group of statements.** A block is a group of statements that can be used where JavaScript expects a single statement. The block is commonly used with control flow statements (e.g. `if`, `for`, `while`).
+
+## What is block scope?
+
+All the variables and functions which can be accessed inside a particular block. **Variables and functions that are declared inside a block are only accessible inside that block.**
+
+```JavaScript
+{
+    var a=20;
+    let b=90;
+    const c=80;
+}
+console.log(a); //20
+console.log(b); //ReferenceError: b is not defined
+console.log(c); //ReferenceError: c is not defined
+```
+`let` and `const` are `block scoped` variables. `var` is accessible anywhere in the global scope. `let` and `const` are not accessible outside the block.

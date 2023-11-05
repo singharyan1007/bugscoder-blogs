@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { text } from 'stream/consumers'
 
 const config: DocsThemeConfig = {
   logo: <span>Bugscoder</span>,
@@ -31,6 +32,14 @@ const config: DocsThemeConfig = {
       <meta property="og:description" content="Base" /> 
     </>
   ),
+  footer:{
+    text:(
+      <span>
+        Bugscoder {new Date().getFullYear()}
+        .
+      </span>
+    )
+    }
   
   
 }

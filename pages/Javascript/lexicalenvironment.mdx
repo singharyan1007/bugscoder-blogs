@@ -1,0 +1,64 @@
+# Lexical(Hierarchy) Environment
+
+```typescript
+var t=100;
+function a(){
+    var b=10;
+    c();
+    function c(){
+        console.log(t);
+    }
+}
+a();
+console.log(b);
+```
+- In the execution context calling, there are two stages: Creation Stage and Execution stage.
+In the creation stage, the VariableEnvironment(Memory Component) component is created, which initially stores the variables, functions classes declarations. 
+- Lexical Environment is just a copy of the VariableEnvironment component of the execution context.
+
+In the Execution- 
+- Values are assigned to the variables.
+- Lexical Environment is used to resolve the bindings.
+
+A `lexical environment` basically consists of two things: local memory and reference to parent's lexical environment.
+> A lexical environment consists of two main components: the environment record and a reference to the outer (parent) lexical environment:
+
+Example 
+```typescript
+var x = 10;
+
+function foo(){
+  var y = 20;
+ console.log(x+y); // 30
+}
+
+// Environment technically consist of two main components: 
+// environmentRecord, and a reference to the outer environment
+
+// Environment of the global context
+globalEnvironment = {
+  environmentRecord: {
+    // built-ins
+    // our bindings:
+    x: 10
+  },
+  outer: null // no parent environment
+};
+
+// Environment of the "foo" function
+fooEnvironment = {
+  environmentRecord: {
+    y: 20
+  },
+  outer: globalEnvironment
+};
+```
+![Visually](https://miro.medium.com/v2/resize:fit:640/format:webp/1*hrzr05Ps9hkLst69yqONCQ.png)
+
+---
+
+
+# Scope Chain
+
+When a functions looks for a variable outside its scope or not present in its own local memory, into the parent's lexical environment, it is called `scope chain`.This pattern will continue until the identifier is resolved. If not found, a `ReferenceError` is thrown.
+

@@ -1,5 +1,9 @@
 {
   "howitworks": "How it works",
   "hoisting": "Hoisting",
-  "howfunctionswork": "How Functions Work and Call Stack"
+  "howfunctionswork": "How Functions Work and Call Stack",
+  "thisandwindow":"this keyword and window object",
+  "lexicalenvironment":"Lexical Environment",
+  "letconsttemporaldeadzone":"let, const and Terporal Dead Zone",
+  "blockscope":"Block Scope and Shadowing"
 }
